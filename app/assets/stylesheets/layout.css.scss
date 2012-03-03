@@ -1,0 +1,116 @@
+$largura: 710px;
+$cor-background: #cff;
+$cor-link: #09c;
+$cor-link-visitado: #069;
+
+.container {
+  width: $largura;
+}
+
+body {
+  background: $cor-background;
+}
+
+header {
+  padding-top: 20px;
+
+  img {
+    padding: 1em;
+    background: white;
+  }
+}
+
+section {
+  margin-top: 1em;
+  font-size: 120%;
+  padding: 20px;
+  background: white;
+
+  h1 {
+    font-size: 200%;
+  }
+}
+
+/* Links */
+
+a {
+  color: $cor-link;
+  text-decoration: none;
+
+  &:hover {
+    color: $cor-link-visitado;
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: $cor-link-visitado;
+  }
+}
+
+/* Navegação */
+
+nav {
+  float: right;
+  cor-background: white;
+  padding: 0 0.7em;
+  white-space: nowrap;
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style-type: none;
+      display: inline-block;
+      padding: 0.2em 0;
+
+      a {
+        padding: 0 5px;
+        font-weight: bold;
+
+        &:visited {
+          color: $cor-link;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+/* Botão de criar conta*/
+
+a.signup_button {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+  width: 190px;
+  color: white;
+  background: #006400;
+  font-size: 150%;
+  font-weight: bold;
+  padding: 20px;
+}
+
+/* Cantos arredondados */
+
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 10px;
+  width: $largura;
+  margin-left: auto;
+  margin-right: auto;
+
+  nav {
+    float: none;
+  }
+}
