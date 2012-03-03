@@ -1,7 +1,7 @@
 Microblog::Application.routes.draw do
   get "paginas/index"
-
   get "paginas/ajuda"
+  get "paginas/sobre"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
