@@ -1,5 +1,9 @@
 Microblog::Application.routes.draw do
+  get "usuarios/new"
+
   root to: "paginas#index"
+
+  match "/signup", to: "usuarios#new"
 
   match "/ajuda", to: "paginas#ajuda"
   match "/sobre", to: "paginas#sobre"
