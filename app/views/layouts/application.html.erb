@@ -10,6 +10,7 @@
     <div class="container">
       <%= render 'layouts/cabecalho' %>
       <section class="round">
+        <p class="notice"><%= flash[:notice] %></p>
         <%= yield %>
       </section>
       <%= render 'layouts/rodape' %>
