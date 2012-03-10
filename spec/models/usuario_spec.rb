@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'spec_helper'
 
 describe Usuario do
@@ -7,4 +9,11 @@ describe Usuario do
 
   it { should respond_to(:nome) }
   it { should respond_to(:email) }
+
+  it { should be_valid }
+
+  describe "quando nome está em branco" do
+    before { @usuario.nome = " " }
+    it { should_not be_valid }
+  end
 end
