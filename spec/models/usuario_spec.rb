@@ -16,4 +16,9 @@ describe Usuario do
     before { @usuario.nome = " " }
     it { should_not be_valid }
   end
+
+  describe "quando email está em branco" do
+    before { @usuario.email = " " }
+    it { should_not be_valid }
+  end
 end
