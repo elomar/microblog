@@ -1,1 +1,2 @@
-<%= @usuario.nome %>, <%= @usuario.email %>
+<% provide(:title, @usuario.nome) %>
+<h1><%= @usuario.nome %></h1>

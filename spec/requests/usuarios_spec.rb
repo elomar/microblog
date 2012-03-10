@@ -5,6 +5,14 @@ require 'spec_helper'
 describe "Usuarios" do
   subject { page }
 
+  describe "profile page" do
+    let(:usuario) { FactoryGirl.create(:usuario) }
+    before { visit usuario_path(usuario) }
+
+    it { should have_selector('h1',    text: usuario.nome) }
+    it { should have_selector('title', text: usuario.nome) }
+  end
+
   describe "página de signup" do
     before { visit signup_path }
 
