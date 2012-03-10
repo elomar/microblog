@@ -2,6 +2,7 @@
 <h1>Cadastre-se</h1>
 
 <%= form_for(@usuario) do |f| %>
+  <%= render 'shared/error_messages' %>
 
   <p>
     <%= f.label :nome %>
