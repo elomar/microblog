@@ -19,4 +19,27 @@ describe "Usuarios" do
     it { should have_selector('h1',    text: 'Cadastre-se') }
     it { should have_selector('title', text: 'MicroBlog IT | Cadastre-se') }
   end
+
+  describe "cadastro" do 
+    before { visit signup_path }
+
+    describe "com informação inválida" do
+      it "não deve criar usuário" do
+        expect { click_button "Criar minha conta" }.not_to change(Usuario, :count)
+      end
+    end
+
+    describe "com informação válida" do
+      before do
+        fill_in "Nome",               with: "Exemplo"
+        fill_in "Email",              with: "usuario@exemplo.com"
+        fill_in "Senha",              with: "123456"
+        fill_in "Confirme sua senha", with: "123456"
+      end
+
+      it "deve criar usuário" do
+        expect { click_button "Criar minha conta" }.to change(Usuario, :count).by(1)
+      end
+    end
+  end
 end
