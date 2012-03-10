@@ -27,4 +27,20 @@ describe Usuario do
     it { should_not be_valid }
   end
 
+  describe "quando email é inválido" do
+    emails_invalidos =  %w[usuario@foo,com usuario_at_foo.org example.usuario@foo.]
+    emails_invalidos.each do |email_invalido|
+      before { @usuario.email = email_invalido }
+      it { should_not be_valid }
+    end
+  end
+
+  describe "quando email é válido" do
+    emails_validos = %w[usuario@foo.com A_usuario@f.b.org frst.lst@foo.jp a+b@baz.cn]
+    emails_validos.each do |email_valido|
+      before { @usuario.email = email_valido }
+      it { should be_valid }
+    end
+  end
+
 end
