@@ -1,3 +1,29 @@
 <% provide(:title, "Cadastre-se") %>
 <h1>Cadastre-se</h1>
-<p>Find me in app/views/usuarios/new.html.erb</p>
+
+<%= form_for(@usuario) do |f| %>
+
+  <p>
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
+  </p>
+
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </p>
+
+  <p>
+    <%= f.label :password, "Senha" %>
+    <%= f.password_field :password %>
+  </p>
+
+  <p>
+    <%= f.label :password_confirmation, "Confirme sua senha" %>
+    <%= f.password_field :password_confirmation %>
+  </p>
+
+  <p>
+    <%= f.submit "Criar minha conta" %>
+  </p>
+<% end %>
