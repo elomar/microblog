@@ -21,4 +21,10 @@ describe Usuario do
     before { @usuario.email = " " }
     it { should_not be_valid }
   end
+
+  describe "quando nome é grande demais" do
+    before { @usuario.nome = "a" * 51 }
+    it { should_not be_valid }
+  end
+
 end
