@@ -43,4 +43,13 @@ describe Usuario do
     end
   end
 
+  describe "quando email já está em uso" do
+    before do
+      usuario_mesmo_email = @usuario.dup
+      usuario_mesmo_email.save
+    end
+
+    it { should_not be_valid }
+  end
+
 end
