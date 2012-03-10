@@ -1,5 +1,10 @@
 require 'spec_helper'
 
 describe Usuario do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before { @usuario = Usuario.new(nome: "Exemplo Usuario", email: "usuario@exemplo.com") }
+
+  subject { @usuario }
+
+  it { should respond_to(:nome) }
+  it { should respond_to(:email) }
 end
