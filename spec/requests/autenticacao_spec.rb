@@ -23,11 +23,11 @@ describe "Autenticação" do
       let(:usuario) { FactoryGirl.create(:usuario) }
       before do
         fill_in "Email", with: usuario.email
-        fill_in "Senha", with: usuario.senha
+        fill_in "Senha", with: usuario.password
         click_button "Entre no site"
       end
 
-      it { should have_selector('title', text: usuario.name) }
+      it { should have_selector('title', text: usuario.nome) }
       it { should have_link('Perfil', href: usuario_path(usuario)) }
       it { should have_link('Sair', href: logout_path) }
       it { should_not have_link('Entre no site', href: login_path) }
