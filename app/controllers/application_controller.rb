@@ -10,6 +10,11 @@ class ApplicationController < ActionController::Base
       @usuario_logado = usuario
     end
 
+    def logout
+      usuario_logado = nil
+      cookies.delete(:remember_token)
+    end
+
     def logado?
       usuario_logado.present?
     end

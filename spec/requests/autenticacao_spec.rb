@@ -36,6 +36,11 @@ describe "Autenticação" do
       it { should have_link('Perfil', href: usuario_path(usuario)) }
       it { should have_link('Sair', href: logout_path) }
       it { should_not have_link('Entre no site', href: login_path) }
+
+      describe "seguido de logout" do
+        before { click_link "Sair" }
+        it { should have_link('Entre no site') }
+      end
     end
   end
 end
