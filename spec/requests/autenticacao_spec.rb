@@ -16,7 +16,12 @@ describe "Autenticação" do
       before { click_button "Entre no site" }
 
       it { should have_selector('title', text: 'Entre no site') }
-      it { should have_selector('div.alert.alert-error', text: 'Inválido') }
+      it { should have_selector('p.alert', text: 'inválidos') }
+
+      describe "depois de visitar outra página" do
+        before { click_link "Início" }
+        it { should_not have_selector('p.alert') }
+      end
     end
 
     describe "com informação válida" do
