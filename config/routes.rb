@@ -1,11 +1,15 @@
 Microblog::Application.routes.draw do
   root to: "paginas#index"
-
-  resources :usuarios
-
-  match "/signup", to: "usuarios#new"
   match "/ajuda", to: "paginas#ajuda"
   match "/sobre", to: "paginas#sobre"
+
+  resources :usuarios
+  resources :sessions, only: [:new, :create, :destroy]
+
+  match "/signup",  to: "usuarios#new"
+  match "/login",   to: "sessions#new"
+  match "/logout",  to: "sessions#destroy", via: :delete
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
