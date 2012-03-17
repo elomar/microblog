@@ -1,11 +1,15 @@
+# encoding: utf-8
+
 require 'spec_helper'
 
-describe "Autenticacaos" do
-  describe "GET /autenticacaos" do
-    it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get autenticacaos_path
-      response.status.should be(200)
-    end
+describe "Autenticação" do
+
+  subject { page }
+
+  describe "página de login" do
+    before { visit login_path }
+
+    it { should have_selector('h1',    text: 'Entre no site') }
+    it { should have_selector('title', text: 'Entre no site') }
   end
 end
