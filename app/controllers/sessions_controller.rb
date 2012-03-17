@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
   def create
     usuario = Usuario.find_by_email(params[:session][:email])
-    if usuario && user.authenticate(params[:session][:password])
+    if usuario && usuario.authenticate(params[:session][:password])
       
     else
       flash[:alert] = "Usuário/senha inválidos!"

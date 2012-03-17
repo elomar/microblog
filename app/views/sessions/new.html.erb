@@ -1,7 +1,7 @@
 <% provide(:title, "Entre no site") %>
 <h1>Entre no site</h1>
 
-<%= form_for(:session, url: login_path) do |f| %>
+<%= form_for(:session, url: sessions_path) do |f| %>
   <p>
     <%= f.label :email %>
     <%= f.text_field :email %>
