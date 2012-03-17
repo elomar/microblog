@@ -10,6 +10,7 @@ class UsuariosController < ApplicationController
   def create
     @usuario = Usuario.new(params[:usuario])
     if @usuario.save
+      login @usuario
       redirect_to @usuario, notice: "Bem vindo ao site!"
     else
       render 'new'

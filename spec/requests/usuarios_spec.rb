@@ -40,6 +40,11 @@ describe "Usuarios" do
       it "deve criar usuário" do
         expect { click_button "Criar minha conta" }.to change(Usuario, :count).by(1)
       end
+
+      describe "ao se cadastrar" do
+        before { click_button "Criar minha conta" }
+        it { should have_link('Sair') }
+      end
     end
   end
 end
