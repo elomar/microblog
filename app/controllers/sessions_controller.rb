@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if usuario && usuario.authenticate(params[:session][:password])
       
     else
-      flash[:alert] = "Usuário/senha inválidos!"
+      flash.now[:alert] = "Usuário/senha inválidos!"
       render 'new'      
     end
   end
