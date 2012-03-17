@@ -104,4 +104,9 @@ describe Usuario do
       specify { usuario_senha_incorreta.should be_false }
     end
   end
+
+  describe "remember token" do
+    before { @usuario.save }
+    its(:remember_token) { should_not be_blank }
+  end
 end

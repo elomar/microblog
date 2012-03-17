@@ -9,4 +9,12 @@ class Usuario < ActiveRecord::Base
   validates :email, presence: true, format: VALID_EMAIL_REGEX, uniqueness: { case_sensitive: false }
 
   has_secure_password
+
+  before_save :create_remember_token
+
+  private
+  
+    def create_remember_token
+      self.remember_token = SecureRandom.urlsafe_base64
+    end
 end
